@@ -6,6 +6,8 @@ const hastagSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
+      unique: true,
+
     },
     tweets: [
       {
@@ -16,6 +18,7 @@ const hastagSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
 
 
 const Hashtag = mongoose.model("Hashtag", hastagSchema);
