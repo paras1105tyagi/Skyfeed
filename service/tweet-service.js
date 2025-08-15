@@ -12,9 +12,9 @@ class TweetService{
         const content = data.content;
         
         let tags = content.match(/#[a-zA-Z0-9_]+/g);
-        tags = tags.map((tag)=>tag.substring(1));
+        tags = tags.map((tag)=>tag.substring(1).toLowerCase());
         // console.log(tags);
-        tags = tags.map(tag => tag.toLowerCase());
+        // tags = tags.map(tag => tag.toLowerCase());
         
         const tweet = await this.tweetRepository.create(data);
         let alreadyPresentTags = await this.hashtagRepository.findByName(tags);
