@@ -1,5 +1,5 @@
-const Tweet = require("./tweet");
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import Tweet from "../models/tweet.js";
 
 const hastagSchema = new mongoose.Schema(
   {
@@ -20,4 +20,4 @@ const hastagSchema = new mongoose.Schema(
 
 const Hashtag = mongoose.model("Hashtag", hastagSchema);
 
-module.exports = Hashtag;
+export default Hashtag;
