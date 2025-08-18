@@ -1,6 +1,9 @@
 import Tweet from "../models/tweet.js";
-
-class TweetRepository {
+import CrudRepository from "./crud-repository.js";
+class TweetRepository extends CrudRepository {
+    constructor() {
+        super(Tweet);
+    }   
 
     async create(data){
         try{
@@ -20,20 +23,28 @@ class TweetRepository {
         }
     }
 
-    async get(id){
-        try{
-             const tweet = await Tweet.findById(id).populate('hashtags');
-             return tweet;
-        }catch(error){
-            console.log(error);
-        }
-    }
+    // async get(id){
+    //     try{
+    //          const tweet = await Tweet.findById(id).populate('hashtags');
+    //          return tweet;
+    //     }catch(error){
+    //         console.log(error);
+    //     }
+    // }
 
-    async destroy(id){
-        try{
-            const tweet = await Tweet.findByIdAndRemove(id);
+    // async destroy(id){
+    //     try{
+    //         const tweet = await Tweet.findByIdAndRemove(id);
+    //         return tweet;
+    //     }catch(error){
+    //         console.log(error);
+    //     }
+    // }
+    async getWithComments(id){
+        try {
+            const tweet = await tweet.findById(id).populate({path: 'comments'}).lean();
             return tweet;
-        }catch(error){
+        } catch (error) {
             console.log(error);
         }
     }
@@ -44,6 +55,16 @@ class TweetRepository {
         return tweet;
         }catch(error){
             console.log(error);
+        }
+    }
+
+    find(id){
+        try {
+            const tweet = Tweet.findById(id);
+            return tweet;
+        } catch (error) {
+            console.log(error);
+            throw error;
         }
     }
 }

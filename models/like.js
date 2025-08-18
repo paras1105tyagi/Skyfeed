@@ -4,7 +4,7 @@ const likeSchema = new mongoose.Schema({
   onModel:{
     type: String,
     required: true,
-    enum: ["Post", "Comment"]
+    enum: ["Tweet", "Comment"]
   },
   likeable: {
     type: mongoose.Schema.Types.ObjectId,
@@ -17,7 +17,7 @@ const likeSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
    },
-   
+
 }, {timestamps: true});
 
 const Like = mongoose.model("Like", likeSchema);
