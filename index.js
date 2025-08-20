@@ -32,11 +32,11 @@ app.listen(3000,async()=>{
     //     password: '123456',
     //     name: 'Paras'
     //  });
-      const user = await userRepo.getAll();
+      // const user = await userRepo.getAll();
       
-      const likeService = new LikeService();
+      // const likeService = new LikeService();
       
-      await likeService.toggleLike(tweets[0].id,'Tweet',user[0].id);
+      // await likeService.toggleLike(tweets[0].id,'Tweet',user[0].id);
 
       
 
