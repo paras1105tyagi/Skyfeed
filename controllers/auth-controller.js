@@ -30,24 +30,7 @@ export const signup = async(req,res) => {
 export const login = async(req, res) => {
     try{
         // console.log("hii->0");
-        const user = await userService.getUserByEmail(req.body.email);
-        if(!user){
-            return res.status(401).json(
-                {
-                    success:false,
-                    message: 'no email found',
-                }
-            )
-        }
-        // console.log("hii->1");
-        if(!user.comparePassword(req.body.password)){
-            return res.status(401).json({
-                message: 'incorrect password',
-                success: false,
-            });
-        }
-        console.log("hii->2");
-        const token = user.genJWT();
+        const token = await userService.signin(req.body);
         return res.status(201).json({
             success: true,
             message: 'Successfully logged in',
