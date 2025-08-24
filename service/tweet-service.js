@@ -10,7 +10,7 @@ class TweetService{
 
 
     async create(data) {
-
+        console.log("dataa is", data);
         const content = data.content;
         
         let tags = content.match(/#[a-zA-Z0-9_]+/g);

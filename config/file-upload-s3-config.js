@@ -1,7 +1,8 @@
 import multer from 'multer';
 import multers3 from 'multer-s3';
 import aws from 'aws-sdk';
-import dotenv from 'dotenv';    
+import dotenv from 'dotenv'; 
+import path from 'path';   
 dotenv.config();
 
 aws.config.update({
@@ -18,10 +19,12 @@ const upload = multer({
         bucket: process.env.AWS_BUCKET_NAME,
         acl: 'public-read',
         metadata: function (req,file,cb){
-            cb(null,{filename: file.filename});
+            cb(null,{fieldName: file.fieldname });
         },
-        key: function(req,res,cb){
-            cb(null,Date.now().toString())
+       key: function (req, file, cb) {
+            const ext = path.extname(file.originalname); // get .png / .jpg
+            const filename = Date.now().toString() + ext; // unique + extension
+            cb(null, filename);
         }
     })
 });
