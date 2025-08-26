@@ -9,7 +9,8 @@ aws.config.update({
     region: process.env.AWS_REGION,
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY 
-})
+});
+
 
 const s3 = new aws.S3();
 
@@ -23,7 +24,7 @@ const upload = multer({
         },
        key: function (req, file, cb) {
             const ext = path.extname(file.originalname); // get .png / .jpg
-            const filename = Date.now().toString() + ext; // unique + extension
+            const filename = "tweet"+Date.now().toString() + ext; // unique + extension
             cb(null, filename);
         }
     })
