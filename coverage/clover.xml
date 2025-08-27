@@ -1,17 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1756206586289" clover="3.2.0">
-  <project timestamp="1756206586289" name="All files">
-    <metrics statements="8" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1" elements="12" coveredelements="9" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
-    <file name="dummy-service.js" path="C:\Users\paras\OneDrive\Desktop\backend_rev\Skyfeed\src\service\dummy-service.js">
+<coverage generated="1756271273416" clover="3.2.0">
+  <project timestamp="1756271273417" name="All files">
+    <metrics statements="62" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="14" coveredmethods="4" elements="78" coveredelements="23" complexity="0" loc="62" ncloc="62" packages="3" files="6" classes="6"/>
+    <package name="models">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="comment.js" path="C:\Users\paras\OneDrive\Desktop\backend_rev\Skyfeed\src\models\comment.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+      </file>
+      <file name="hastags.js" path="C:\Users\paras\OneDrive\Desktop\backend_rev\Skyfeed\src\models\hastags.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+      </file>
+      <file name="tweet.js" path="C:\Users\paras\OneDrive\Desktop\backend_rev\Skyfeed\src\models\tweet.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="repository">
+      <metrics statements="48" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="3"/>
+      <file name="crud-repository.js" path="C:\Users\paras\OneDrive\Desktop\backend_rev\Skyfeed\src\repository\crud-repository.js">
+        <metrics statements="26" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+      </file>
+      <file name="tweet-repository.js" path="C:\Users\paras\OneDrive\Desktop\backend_rev\Skyfeed\src\repository\tweet-repository.js">
+        <metrics statements="22" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="service">
       <metrics statements="8" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="0" type="stmt"/>
-      <line num="3" count="0" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="7" count="2" type="stmt"/>
-      <line num="8" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-    </file>
+      <file name="dummy-service.js" path="C:\Users\paras\OneDrive\Desktop\backend_rev\Skyfeed\src\service\dummy-service.js">
+        <metrics statements="8" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
