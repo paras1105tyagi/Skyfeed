@@ -11,7 +11,7 @@ import { passportAuth } from './src/config/jwt-middleware.js';
 
 const app = express();
 
-// allow CORS from all origins
+
 app.use(cors());
 
 app.use(express.json());

@@ -33,16 +33,16 @@ const TweetComposer = ({ onCreated }) => {
   if (!isAuthenticated) return null;
 
   return (
-    <form onSubmit={submit} className="mb-4 p-4 border rounded space-y-3 bg-white">
+    <form onSubmit={submit} className="mb-2 p-4 bg-white rounded-2xl shadow-md space-y-3">
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder="What's happening?"
-        className="w-full border rounded px-3 py-2 min-h-20"
+        className="w-full border rounded-lg px-3 py-2 min-h-20 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
       />
       <div className="flex items-center justify-between">
         <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files?.[0] || null)} />
-        <button disabled={loading} className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-60">
+        <button disabled={loading} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:opacity-60">
           {loading ? "Posting..." : "Post"}
         </button>
       </div>

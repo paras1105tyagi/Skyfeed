@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { apiClient } from "../api/client";
 import { useAuth } from "../context/AuthContext";
+import ImageLoader from "../components/ImageLoader";
 
 const TweetDetail = () => {
   const { id } = useParams();
@@ -61,23 +62,23 @@ const TweetDetail = () => {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
-      <div className="p-4 border rounded">
-        <p className="whitespace-pre-wrap">{tweet.content}</p>
-        {tweet.image && <img src={tweet.image} alt="tweet" className="mt-2 rounded border" />}
-        <div className="mt-3 flex items-center gap-3">
-          <button onClick={toggleLike} className="px-3 py-1.5 rounded bg-gray-100 hover:bg-gray-200">Like</button>
-          <span className="text-sm text-gray-600">{tweet.likes?.length || 0} likes</span>
+             <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md">
+         <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-100">{tweet.content}</p>
+         {tweet.image && <ImageLoader src={tweet.image} alt="tweet" className="mt-3 w-full max-h-96 object-cover rounded-lg" />}
+         <div className="mt-3 flex items-center gap-3">
+          <button onClick={toggleLike} className="px-3 py-1.5 rounded bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300">Like</button>
+          <span className="text-sm text-gray-600 dark:text-gray-300">{tweet.likes?.length || 0} likes</span>
         </div>
       </div>
       <div>
         <h2 className="font-semibold mb-2">Comments</h2>
         <ul className="space-y-3">
           {(tweet.comments || []).map((c) => (
-            <li key={c._id || c.id} className="p-3 border rounded">
-              <p className="whitespace-pre-wrap">{c.content}</p>
+            <li key={c._id || c.id} className="bg-gray-50 dark:bg-gray-900 p-3 rounded-lg border-l-4 border-blue-200">
+              <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-100">{c.content}</p>
               <div className="mt-2 flex items-center gap-3">
-                <button onClick={() => toggleCommentLike(c._id || c.id)} className="px-3 py-1.5 rounded bg-gray-100 hover:bg-gray-200">Like</button>
-                <span className="text-sm text-gray-600">{c.likes?.length || 0} likes</span>
+                <button onClick={() => toggleCommentLike(c._id || c.id)} className="px-3 py-1.5 rounded bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300">Like</button>
+                <span className="text-sm text-gray-600 dark:text-gray-300">{c.likes?.length || 0} likes</span>
               </div>
             </li>
           ))}
@@ -89,9 +90,9 @@ const TweetDetail = () => {
             value={comment}
             onChange={(e) => setComment(e.target.value)}
             placeholder="Write a comment"
-            className="flex-1 border rounded px-3 py-2"
+            className="flex-1 border rounded px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           />
-          <button className="px-4 py-2 bg-blue-600 text-white rounded">Comment</button>
+          <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Comment</button>
         </form>
       )}
     </div>

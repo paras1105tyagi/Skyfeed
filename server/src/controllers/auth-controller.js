@@ -45,4 +45,26 @@ export const login = async(req, res) => {
             success: false,
         })
     }
+    
+}
+
+export const getAll = async(req, res) => {
+    try{
+        const limit = parseInt(req.query.limit, 10) || 10;
+        const offset = parseInt(req.query.offset, 10) || 0;
+        const users = await userService.getAll(limit, offset);
+        return res.status(200).json({
+            success: true,
+            message: 'Successfully fetched all users',
+            data: users,
+        })
+    }
+    catch(error){
+        return res.status(500).json({
+            message: 'Something went wrong at auth-controller',
+            data: {},
+            err: error,
+            success: false,
+        })
+    }
 }

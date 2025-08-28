@@ -35,7 +35,14 @@ class UserService {
             throw error;
         }
     }
-
+    async getAll(limit, offset){
+        try{
+            const users = await this.userRepository.getAll(limit, offset);
+            return users;
+        }catch(error){
+            throw error;
+        }
+    }
     async signin(data){
         try{
          const user = await this.getUserByEmail(data.email);

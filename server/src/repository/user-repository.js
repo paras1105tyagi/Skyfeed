@@ -18,6 +18,15 @@ class UserRepository extends CrudRepository {
             throw error;
         }
     }
+
+    async getAll(limit, offset){
+        try{
+            const users = await User.find({}).limit(limit).skip(offset);
+            return users;
+        }catch(error){
+            throw error;
+        }
+    }
 };
 
 export default UserRepository;
