@@ -1,13 +1,13 @@
 import express from 'express';
 import passport from 'passport';
-import connect from './src/config/database.js';
+import connect from './config/database.js';
 import cors from 'cors';
 
-import apiRoutes from './src/routes/index.js';
-import UserRepository from './src/repository/user-repository.js';
-import TweetRepository from './src/repository/tweet-repository.js';
-import LikeService from './src/service/like-service.js';
-import { passportAuth } from './src/config/jwt-middleware.js';
+import apiRoutes from './routes/index.js';
+import UserRepository from './repository/user-repository.js';
+import TweetRepository from './repository/tweet-repository.js';
+import LikeService from './service/like-service.js';
+import { passportAuth } from './config/jwt-middleware.js';
 
 const app = express();
 
